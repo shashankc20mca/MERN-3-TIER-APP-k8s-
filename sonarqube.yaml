@@ -13,6 +13,9 @@ spec:
       labels:
         app: sonarqube
     spec:
+      securityContext:
+        fsGroup: 1000
+        fsGroupChangePolicy: "OnRootMismatch"
       containers:
         - name: sonarqube
           image: sonarqube:latest
@@ -35,7 +38,7 @@ spec:
           - ReadWriteOnce
         resources:
           requests:
-            storage: 3Gi
+            storage: 2Gi
     - metadata:
         name: sonarqube-extensions
       spec:
@@ -44,7 +47,7 @@ spec:
           - ReadWriteOnce
         resources:
           requests:
-            storage: 3Gi
+            storage: 2Gi
     - metadata:
         name: sonarqube-logs
       spec:
@@ -53,7 +56,7 @@ spec:
           - ReadWriteOnce
         resources:
           requests:
-            storage: 3Gi
+            storage: 2Gi
 ---
 # Headless Service for StatefulSet
 apiVersion: v1

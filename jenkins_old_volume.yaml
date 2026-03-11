@@ -27,18 +27,11 @@ spec:
           volumeMounts:
             - name: jenkins-home
               mountPath: /var/jenkins_home
-  volumeClaimTemplates:
-    - metadata:
-        name: jenkins-home
-      spec:
-        storageClassName: gp2
-        accessModes:
-          - ReadWriteOnce
-        resources:
-          requests:
-            storage: 4Gi
+      volumes:
+        - name: jenkins-home
+          persistentVolumeClaim:
+            claimName: jenkins-home-existing
 ---
-# Headless Service for StatefulSet
 apiVersion: v1
 kind: Service
 metadata:
@@ -52,7 +45,6 @@ spec:
       port: 8080
       targetPort: 8080
 ---
-# NodePort Service for external access
 apiVersion: v1
 kind: Service
 metadata:
