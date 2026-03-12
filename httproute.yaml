@@ -22,7 +22,7 @@ spec:
       backendRefs:
         - name: frontend
           port: 5050
-          weight: 50
+          weight: 100
         - name: frontend2
           port: 5050
-          weight: 50
+          weight: 0
