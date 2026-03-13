@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: shashank20062000/mern-3tier-frontend:20
+          image: shashank20062000/mern-3tier-frontend:21
           imagePullPolicy: Always
           ports:
             - containerPort: 5050
