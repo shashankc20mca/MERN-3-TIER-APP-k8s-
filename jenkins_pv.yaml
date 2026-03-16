@@ -12,7 +12,7 @@ spec:
   storageClassName: ""
   csi:
     driver: ebs.csi.aws.com
-    volumeHandle: vol-05b316e439f05c096
+    volumeHandle: vol-045fb871565f2c39d
     fsType: ext4
   nodeAffinity:
     required:
