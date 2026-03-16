@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: backend
-          image: shashank20062000/mern-3tier-backend:8
+          image: shashank20062000/mern-3tier-backend:9
           imagePullPolicy: Always
           ports:
             - containerPort: 8333
